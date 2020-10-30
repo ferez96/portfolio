@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Portfolio from './Portfolio';
+import Welcome from './Welcome';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+function App() {
+    const [checked, setChecked] = React.useState(true);
+
+    const handleChange = () => {
+        setChecked((prev) => !prev);
+    };
+    return checked ? <Welcome handleShowContent={handleChange} /> : <Portfolio />
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
