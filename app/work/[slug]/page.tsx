@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/work/utils'
+import { profile } from 'app/data/profile'
 import { baseUrl } from 'app/site'
 
 export async function generateStaticParams() {
@@ -77,7 +78,7 @@ export default function Blog({ params }) {
             url: `${baseUrl}/work/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'Portfolio',
+              name: profile.name,
             },
           }),
         }}

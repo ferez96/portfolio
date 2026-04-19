@@ -7,21 +7,20 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './site'
+import { profile } from './data/profile'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Portfolio',
-    template: '%s | Portfolio',
+    default: profile.name,
+    template: `%s | ${profile.name}`,
   },
-  description:
-    'Backend engineering practice — APIs, systems, and reliable software in Go.',
+  description: profile.headline,
   openGraph: {
-    title: 'Portfolio',
-    description:
-      'Backend engineering practice — APIs, systems, and reliable software in Go.',
+    title: profile.name,
+    description: profile.headline,
     url: baseUrl,
-    siteName: 'Portfolio',
+    siteName: profile.name,
     locale: 'en_US',
     type: 'website',
   },

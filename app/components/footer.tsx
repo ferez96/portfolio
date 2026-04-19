@@ -1,3 +1,5 @@
+import { portfolioRepoUrl, profile } from 'app/data/profile'
+
 function ArrowIcon() {
   return (
     <svg
@@ -15,35 +17,61 @@ function ArrowIcon() {
   )
 }
 
+const linkClass =
+  'flex items-center transition-all hover:text-cyan-700 dark:hover:text-cyan-200'
+
 export default function Footer() {
   return (
     <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-cyan-800/80 md:flex-row md:space-x-4 md:space-y-0 dark:text-cyan-400/80">
+      <ul className="font-sm mt-8 flex flex-col flex-wrap gap-x-4 gap-y-2 text-cyan-800/80 md:flex-row md:items-center dark:text-cyan-400/80">
         <li>
-          <a
-            className="flex items-center transition-all hover:text-cyan-700 dark:hover:text-cyan-200"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="/rss"
-          >
+          <a className={linkClass} href="/rss">
             <ArrowIcon />
             <p className="ml-2 h-7">rss</p>
           </a>
         </li>
         <li>
+          <a className={linkClass} href={`mailto:${profile.email}`}>
+            <ArrowIcon />
+            <p className="ml-2 h-7">email</p>
+          </a>
+        </li>
+        <li>
           <a
-            className="flex items-center transition-all hover:text-cyan-700 dark:hover:text-cyan-200"
+            className={linkClass}
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/ferez96/portfolio"
+            href={profile.linkedin}
+          >
+            <ArrowIcon />
+            <p className="ml-2 h-7">linkedin</p>
+          </a>
+        </li>
+        <li>
+          <a
+            className={linkClass}
+            rel="noopener noreferrer"
+            target="_blank"
+            href={profile.github}
           >
             <ArrowIcon />
             <p className="ml-2 h-7">github</p>
           </a>
         </li>
+        <li>
+          <a
+            className={linkClass}
+            rel="noopener noreferrer"
+            target="_blank"
+            href={portfolioRepoUrl}
+          >
+            <ArrowIcon />
+            <p className="ml-2 h-7">site source</p>
+          </a>
+        </li>
       </ul>
       <p className="mt-8 text-cyan-800/70 dark:text-cyan-500/70">
-        © {new Date().getFullYear()}
+        © {new Date().getFullYear()} {profile.name}
       </p>
     </footer>
   )

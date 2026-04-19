@@ -1,4 +1,5 @@
 import { baseUrl } from 'app/site'
+import { profile } from 'app/data/profile'
 import { getBlogPosts } from 'app/work/utils'
 
 export async function GET() {
@@ -27,9 +28,9 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-        <title>Portfolio</title>
+        <title>${profile.name}</title>
         <link>${baseUrl}</link>
-        <description>Selected work and writing</description>
+        <description>${profile.headline}</description>
         ${itemsXml}
     </channel>
   </rss>`

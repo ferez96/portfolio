@@ -1,8 +1,9 @@
 import { ImageResponse } from 'next/og'
+import { profile } from 'app/data/profile'
 
 export function GET(request: Request) {
   let url = new URL(request.url)
-  let title = url.searchParams.get('title') || 'Portfolio'
+  let title = url.searchParams.get('title') || profile.name
 
   return new ImageResponse(
     (
