@@ -2,8 +2,9 @@
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "pnpm run generate:rss && next dev",
+    "build": "pnpm run generate:rss && next build",
+    "generate:rss": "tsx scripts/generate-rss.ts",
     "start": "next start"
   },
   "dependencies": {
@@ -22,5 +23,8 @@
     "sugar-high": "^0.6.0",
     "tailwindcss": "4.0.0-alpha.13",
     "typescript": "^5"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
   }
 }

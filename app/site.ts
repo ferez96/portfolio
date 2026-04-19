@@ -1,3 +1,6 @@
+/** Subpath when hosted on GitHub Pages project sites (set in CI). */
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 /** Canonical site URL for metadata, OG, RSS, and sitemap. */
 export const baseUrl = (() => {
   if (process.env.NEXT_PUBLIC_SITE_URL) {

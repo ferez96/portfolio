@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { portfolioRepoUrl, profile } from 'app/data/profile'
 
 function ArrowIcon() {
@@ -25,10 +26,10 @@ export default function Footer() {
     <footer className="mb-16">
       <ul className="font-sm mt-8 flex flex-col flex-wrap gap-x-4 gap-y-2 text-cyan-800/80 md:flex-row md:items-center dark:text-cyan-400/80">
         <li>
-          <a className={linkClass} href="/rss">
+          <Link className={linkClass} href="/rss.xml">
             <ArrowIcon />
             <p className="ml-2 h-7">rss</p>
-          </a>
+          </Link>
         </li>
         <li>
           <a className={linkClass} href={`mailto:${profile.email}`}>

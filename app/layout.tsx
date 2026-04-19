@@ -6,7 +6,7 @@ import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
-import { baseUrl } from './site'
+import { basePath, baseUrl } from './site'
 import { profile } from './data/profile'
 
 export const metadata: Metadata = {
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     siteName: profile.name,
     locale: 'en_US',
     type: 'website',
+    images: [{ url: `${baseUrl}${basePath}/og.svg` }],
   },
   robots: {
     index: true,
